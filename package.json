@@ -1,0 +1,32 @@
+{
+  "name": "myurltopdf",
+  "version": "1.0.7",
+  "description": "Convert your web pages or HTML into PDF",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mind2minds/myurltopdf"
+  },
+  "keywords": [
+    "URL to PDF",
+    "HTML to PDF",
+    "Convert URL to PDF",
+    "Convert HTML to PDF",
+    "Convert website to PDF",
+    "Website to pdf"
+  ],
+  "author": "Dilshad Khan <team@mind2minds.com> (http://mind2minds.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mind2minds/myurltopdf/issues"
+  },
+  "homepage": "https://github.com/mind2minds/myurltopdf",
+  "dependencies": {
+    "temp": "~0.6.0",
+    "phantomjs": "~1.9.x",
+    "underscore": "~1.6.0"
+  }
+}
