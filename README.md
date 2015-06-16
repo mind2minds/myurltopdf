@@ -13,7 +13,7 @@ Usage
 -----------------------
 To generate pdf follow these simple steps.
 
-To generate pdf from raw html call myhtmltopdf(html,options,callback). see example below the right syntex
+To generate pdf from raw html call myhtmltopdf(html,options,callback). See the example below for the right syntax.
 
 ```shell
 var myurlpdf = require("myurltopdf");
@@ -30,7 +30,7 @@ myurlpdf.myhtmltopdf("<strong>Hi Sam,</strong><br/><div> Simple tool to generate
 ```
 Or
 
-To generate pdf from any url call myurltopdf(url,options,callback). see example below the right syntex
+To generate pdf from any url call myurltopdf(url,options,callback). See the example below for the right syntax.
 
 ```shell
 myurlpdf.myurltopdf("http://mind2minds.com", {fileName:"...../filename.pdf"}, function(err){
@@ -44,12 +44,12 @@ myurlpdf.myurltopdf("http://mind2minds.com", {fileName:"...../filename.pdf"}, fu
 
 Options
 -----------------------
-Options is json object contains following key values
+Options is a json object. It contains the following key values.
 
 -fileName - pdf file path - required
 
 -tmpFolderPath - optional. default path is tmp folder path of the installed module.
-Where tmp files created for the pdf generation process and removed after pdf generation process completed.
+Where tmp files are created for the pdf generation process and removed after pdf generation process is completed.
 
 -viewportSize - optional
 default viewPortSize is
