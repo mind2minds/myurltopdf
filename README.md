@@ -48,7 +48,7 @@ Options is a json object. It contains the following key values.
 
 -fileName - pdf file path - required
 
--tmpFolderPath - optional. default path is tmp folder path of the installed module.
+-tmpFolderPath - optional. Default path is tmp folder path of the installed module.
 Where tmp files are created for the pdf generation process and removed after pdf generation process is completed.
 
 -viewportSize - optional
