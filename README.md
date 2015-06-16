@@ -17,7 +17,10 @@ To generate pdf from raw html call myhtmltopdf(html,options,callback). see examp
 
 ```shell
 var myurlpdf = require("myurltopdf");
-myurlpdf.myhtmltopdf("<strong>Hi Sam,</strong><br/><div> Simple tool to generate raw HTML to pdf using myurltopdf.</div><div style='font-size:12px;color:#DDD'>Created By Dilhad Khan<br/><a href='http://mind2minds.com'>http://mind2minds.com</a></div>", {fileName:"....../filename.pdf"}, function(err){
+myurlpdf.myhtmltopdf("<strong>Hi Sam,</strong><br/><div> Simple tool to generate raw HTML to pdf using myurltopdf.</div><div style='font-size:12px;color:#DDD'>Created By Dilhad Khan<br/><a href='http://mind2minds.com'>http://mind2minds.com</a></div>",
+                    {
+                      fileName:"....../filename.pdf"
+                    }, function(err){
   if(err){
     console.log(err);
   }else{
@@ -39,54 +42,66 @@ myurlpdf.myurltopdf("http://mind2minds.com", {fileName:"...../filename.pdf"}, fu
 });
 ```
 
-Methods
+Options
 -----------------------
-myurltopdf(url, options, callback)
+Options is json object contains following key values
 
-myhtmltopdf(html, options, callback)
+-fileName - pdf file path - required
 
-Params
------------------------
-url -  - required
+-tmpFolderPath - optional. default path is tmp folder path of the installed module.
+Where tmp files created for the pdf generation process and removed after pdf generation process completed.
 
-html - required
-
-options - {
-  fileName - pdf file path - required
-  tmpFolderPath - optional. default path is tmp directory of the installed module. where tmp files created for the pdf generation process and removed after pdf generation process completed
-  viewportSize - optional. default viewPortSize is { width: 1024, height : 768 }
-  paperSize - optional. default paperSize is {format: 'A4', orientation: 'portrait', border: '0.5cm'}
-
-
+-viewportSize - optional
+default viewPortSize is
+```shell
+viewPortSize = { width: 1024, height : 768 }
+```
+-paperSize - optional
+default paperSize is
+```shell
+paperSize={
+  format: 'A4',
+  orientation: 'portrait',
+  border: '0.5cm'
 }
-callback - required
+```
 
-Misc Options
+Advanced Options
 -----------------------
 
-1.viewportSize - {
+```shell
+viewportSize = {
   width : in px
   height :  in px
 }
-2.pageSize - {
-  -----------
-  format - "A4",
-  or
-  width -
-  height -
-  ----------
-  borders: number in px
-  or as object e.g. {top:, right, bottom, left}
-  -------
-  headers - object {
+```
 
+```shell
+pageSize = {
+  format: "A4" - Supported formats are: 'A3', 'A4', 'A5', 'Legal', 'Letter', 'Tabloid'
+  OR
+  width : in px,
+  height : in px,
+  orientation: 'portrait', 'landscape',
+  borders: in px,
+  OR as object for indvidual sides e.g.
+    borders: {
+      top: in px,
+      right: in px,
+      bottom: in px,
+      left: in px
+    },
+  header: {
+    height: "1cm",
+    contents: phantom.callback(function(pageNum, numPages) {
+      return "<h1>Header <span style='float:right'>" + pageNum + " / " + numPages + "</span></h1>";
+    })
+  },
+  footer: {
+    height: "1cm",
+    contents: phantom.callback(function(pageNum, numPages) {
+      return "<h1>Footer <span style='float:right'>" + pageNum + " / " + numPages + "</span></h1>";
+    })
   }
-  ----------
-
-  footers - object {
-
-  }
-
-
 }
-
+```
