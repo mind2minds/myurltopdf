@@ -1,6 +1,6 @@
 {
   "name": "myurltopdf",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Convert your web pages or HTML into PDF",
   "main": "index.js",
   "scripts": {
